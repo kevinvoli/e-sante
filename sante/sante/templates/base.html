@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bienvenu{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body id="{% block bodyId %}bodyContent{% endblock %}">
+
+<header> {% block headerContent %} {% endblock %}</header>
+
+<section id="section"> {% block content %}content{% endblock %} </section>
+
+
+<footer id="footer">{% block footer %}footerContent{% endblock %} </footer>
+
+
+</body>
+</html>

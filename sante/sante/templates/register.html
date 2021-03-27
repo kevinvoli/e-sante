@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} Inscription {% endblock %}
+
+{% block bodyId %}registrationPage{% endblock %}
+
+{% block content %}
+
+
+<h1>Création d'un compte</h1>
+<form >
+    <p>
+        <label for="profileType">Vous êtes :</label>
+        <select name="" id="profileType">
+            <option value="user" {% if userForm.is_bound %} selected="selected" {% endif %}>Utilisateur</option>
+            <option value="hospital" {% if hospitalForm.is_bound %} selected="selected" {% endif %}>Hopital</option>
+            <option value="pharmacy" {% if pharmacyForm.is_bound %} selected="selected" {% endif %}>Pharmacie</option>
+        </select>
+    </p>
+</form>
+
+<form action="register" method="get" id="userForm">
+    {{ userForm.as_p }}
+
+    <p>
+                <input type="hidden" name="profileType" value="user" />
+                <input type="submit" value="Créer un compte" />
+    </p>
+</form>
+
+<form action="register" method="get" id="hospitalForm">
+    {{ hospitalForm.as_p }}
+
+    <p>
+                <input type="hidden" name="profileType" value="hospital" />
+                <input type="submit" value="Créer un compte" />
+    </p>
+</form>
+
+<form action="register" method="get" id="pharmacyForm">
+    {{ pharmacyForm.as_p }}
+
+    <p>
+                <input type="hidden" name="profileType" value="pharmacy" />
+                <input type="submit" value="Créer un compte" />
+    </p>
+</form>
+{% endblock %}
+
+
+
+{% block footer %}
+{% endblock %}
